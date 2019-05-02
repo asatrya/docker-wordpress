@@ -29,6 +29,7 @@ RUN apache2ctl configtest
 # Create app folder
 WORKDIR /var/www/html
 COPY . .
+RUN chmod -R 775 wp-content/uploads
 
 # Expose port
 EXPOSE 80 443

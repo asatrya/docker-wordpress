@@ -1,2 +1,3 @@
 wp-config.php
-web/wp-content/uploads/
+web/wp-content/uploads/*
+!web/wp-content/uploads/empty.txt
