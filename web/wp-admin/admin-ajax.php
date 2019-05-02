@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/AJAX_in_Plugins
  */
-
+echo 'masuk';exit;
 /**
  * Executing Ajax process.
  *
@@ -164,6 +164,7 @@ if ( is_user_logged_in() ) {
 	 *
 	 * @since 2.1.0
 	 */
+	echo "wp_ajax_{$action}";
 	do_action( "wp_ajax_{$action}" );
 } else {
 	// If no action is registered, return a Bad Request response.
@@ -179,6 +180,7 @@ if ( is_user_logged_in() ) {
 	 *
 	 * @since 2.8.0
 	 */
+	echo "wp_ajax_nopriv_{$action}";
 	do_action( "wp_ajax_nopriv_{$action}" );
 }
 // Default status
