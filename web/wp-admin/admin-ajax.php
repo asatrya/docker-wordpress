@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/AJAX_in_Plugins
  */
-echo 'masuk';exit;
+
 /**
  * Executing Ajax process.
  *
