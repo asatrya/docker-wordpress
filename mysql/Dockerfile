@@ -1,4 +1,4 @@
-FROM mysql:5.7
+FROM mysql:5.6
 
 # Install tools
 RUN apt-get update
@@ -13,6 +13,3 @@ COPY image-files/ /
 
 # Expose port
 EXPOSE 3306
-
-# ENTRYPOINT ["apachectl", "-DFOREGROUND"]
-# CMD ["tail", "-f", "/dev/null"]
