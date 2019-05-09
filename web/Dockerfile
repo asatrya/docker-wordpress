@@ -27,7 +27,7 @@ RUN a2enconf ssl-params
 RUN apache2ctl configtest
 
 # Install MySQL client
-RUN apt-get install mysql-client
+RUN apt-get install mysql-client -y
 
 # Create app folder
 WORKDIR /var/www/html
