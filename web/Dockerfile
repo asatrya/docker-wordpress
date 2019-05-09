@@ -26,6 +26,9 @@ RUN a2ensite default-ssl
 RUN a2enconf ssl-params
 RUN apache2ctl configtest
 
+# Install MySQL client
+RUN apt-get install mysql-client
+
 # Create app folder
 WORKDIR /var/www/html
 COPY . .
