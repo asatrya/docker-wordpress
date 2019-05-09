@@ -6,6 +6,8 @@ services:
       dockerfile: Dockerfile
     image: asatrya/wordpress:5.1.1
     restart: always
+    networks:
+      - internal
     ports:
       - 80:80
       - 443:443
@@ -17,12 +19,18 @@ services:
       - db
 
   db:
-    build:
-      context: ./mysql
-      dockerfile: Dockerfile
-    image: mysql:5.7
+    build: ./mysql
+    image: asatrya/mysql:5.6
     restart: always
+    networks:
+      - internal
     ports:
       - 3306:3306
     env_file:
       - .env
+    volumes:
+      - /var/lib/mysql
+
+networks:
+  internal:
+    driver: bridge
