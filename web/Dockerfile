@@ -18,14 +18,14 @@ COPY image-files/ /
 RUN chmod 700 /usr/local/bin/update-siteurl.sh
 
 # Configure SSL
-RUN apt-get install software-properties-common -y
-RUN add-apt-repository ppa:certbot/certbot
-RUN apt-get install python-certbot-apache -y
-RUN a2enmod ssl
-RUN a2enmod headers
-RUN a2ensite default-ssl
-RUN a2enconf ssl-params
-RUN apache2ctl configtest
+# RUN apt-get install software-properties-common -y
+# RUN add-apt-repository ppa:certbot/certbot
+# RUN apt-get install python-certbot-apache -y
+# RUN a2enmod ssl
+# RUN a2enmod headers
+# RUN a2ensite default-ssl
+# RUN a2enconf ssl-params
+# RUN apache2ctl configtest
 
 # Install MySQL client
 RUN apt-get install mysql-client -y
