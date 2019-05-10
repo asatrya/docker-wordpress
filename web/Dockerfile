@@ -34,6 +34,7 @@ RUN apt-get install mysql-client -y
 WORKDIR /var/www/html
 COPY . .
 RUN chmod -R 775 wp-content/uploads
+RUN chown -R www-data:www-data wp-content/uploads
 
 # Expose port
 EXPOSE 80 443

@@ -14,7 +14,8 @@ services:
     env_file:
       - .env
     volumes:
-      - ./web/wp-content:/var/www/html/wp-content
+      # - ./web/wp-content:/var/www/html/wp-content
+      - /var/www/html/wp-content/uploads
     depends_on:
       - db
 
