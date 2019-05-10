@@ -13,3 +13,6 @@ done
 
 printf "Updating database...\n\n"
 mysql -u $MYSQL_USER -p$MYSQL_PASSWORD $MYSQL_DATABASE -e "update wp_options set option_value='$WORDPRESS_BASE_URL' where option_name='siteurl' or option_name='home'"
+
+printf "Starting apache...\n\n"
+apachectl -DFOREGROUND

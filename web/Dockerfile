@@ -15,6 +15,7 @@ RUN apt-get install php libapache2-mod-php php-mysql -y
 
 # Copy conf files
 COPY image-files/ /
+RUN chmod 700 /usr/local/bin/update-siteurl.sh
 
 # Configure SSL
 RUN apt-get install software-properties-common -y
@@ -37,5 +38,5 @@ RUN chmod -R 775 wp-content/uploads
 # Expose port
 EXPOSE 80 443
 
-ENTRYPOINT ["apachectl", "-DFOREGROUND"]
-# CMD ["tail", "-f", "/dev/null"]
+# ENTRYPOINT ["apachectl", "-DFOREGROUND"]
+ENTRYPOINT [ "/usr/local/bin/update-siteurl.sh" ]
