@@ -15,7 +15,7 @@ services:
       - .env
     volumes:
       # - ./web/wp-content:/var/www/html/wp-content
-      - /var/www/html/wp-content/uploads
+      - vol_content_uploads:/var/www/html/wp-content/uploads
     depends_on:
       - db
 
@@ -30,8 +30,12 @@ services:
     env_file:
       - .env
     volumes:
-      - /var/lib/mysql
+      - vol_mysql_data:/var/lib/mysql
 
 networks:
   internal:
     driver: bridge
+
+volumes:
+  vol_content_uploads:
+  vol_mysql_data:
