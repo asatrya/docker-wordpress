@@ -11,7 +11,7 @@ RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
 # Install apache
 RUN apt-get install apache2 -y
-RUN apt-get install php libapache2-mod-php php-mysql -y
+RUN apt-get install php libapache2-mod-php php-mysql php-curl -y
 
 # Install MySQL client
 RUN apt-get update && apt-get install mysql-client -y
